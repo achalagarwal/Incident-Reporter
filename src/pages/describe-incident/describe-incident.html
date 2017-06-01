@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Describe Incident
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <div>
+    <a style="display:block;" on-click="goToCaptureIncident()">
+      <img src="assets/img/AhGeoG7DQhiehtpBtD3q_camera-logo_1032-109.jpg" style="display:block;width:80%;height:auto;margin-left:auto;margin-right:auto;" />
+    </a>
+  </div>
+  <div class="spacer" style="width:300px;height:14px;" id="describeIncident-spacer2"></div>
+  <form id="describeIncident-form7">
+    <ion-item id="describeIncident-range2">
+      <ion-range min="0" max="100" step="1" color="positive" value="50" name="Image_Size">
+        <ion-label range-left>
+          Image Quality
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="describeIncident-select1">
+      <ion-label>
+        Incident Type
+      </ion-label>
+      <ion-select name="">
+        <ion-option>
+          Fire
+        </ion-option>
+        <ion-option>
+          Flood
+        </ion-option>
+        <ion-option>
+          Landslide
+        </ion-option>
+        <ion-option>
+          Other
+        </ion-option>
+        <ion-option></ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item id="describeIncident-textarea1">
+      <ion-label>
+        Image Description
+      </ion-label>
+      <ion-textarea placeholder="Describe your image"></ion-textarea>
+    </ion-item>
+    <button id="describeIncident-button7" ion-button color="positive" block>
+      Submit
+    </button>
+  </form>
+</ion-content>
