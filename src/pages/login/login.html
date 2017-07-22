@@ -34,8 +34,10 @@
 
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" color="positive" full (click)="login()" [disabled]="!registerForm.form.valid">Login</button>
+          <button *ngIf="isOnline" ion-button class="submit-btn" color="positive" full (click)="login()" [disabled]="!(registerForm.form.valid)">Login</button>
+          <button *ngIf="!isOnline" ion-button class="submit-btn" color="positive" full (click)="login()" [disabled]="!(registerForm.form.valid)">Offline Login</button>
           <button ion-button class="register-btn" color="positive" block clear (click)="createAccount()">Sign Up</button>
+          <button ion-button   color="danger" block clear  (click)="quickEntry()"> Quick Access </button>
         </ion-col>
       </ion-row>
 

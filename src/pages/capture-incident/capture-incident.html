@@ -1,10 +1,22 @@
 <ion-content padding id="page4">
   <div id="captureIncident-markdown1" class="show-list-numbers-and-dots">
     <p style="color:#000000;">
-      Hi {{user.userid}}, Link with Camera here.
+      Welcome to NE-IR!
+    </p>
+    <p style="color:#000000;">
+      Please choose the quality of the picture you want for your incident
     </p>
   </div>
-  <button id="captureIncident-button6" ion-button color="positive" block (click)="takePicture()">
-    Tap me!
+  <button id="captureIncident-button6" ion-button  color="positive"  (click)="takePicture(1)">
+   High
+</button>
+  <button id="captureIncident-button6" ion-button  color="positive"  (click)="takePicture(2)">
+    Medium
+  </button>
+  <button id="captureIncident-button6" ion-button  color="positive"  (click)="takePicture(3)">
+    Low
+  </button>
+  <button ion-button color="royal" (click)="viewMyIncidents()">
+    My Incidents
   </button>
 </ion-content>

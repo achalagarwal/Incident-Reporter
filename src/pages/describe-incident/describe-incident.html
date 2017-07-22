@@ -8,13 +8,13 @@
 <ion-content padding id="page5">
   <div>
     <a style="display:block;" on-click="goToCaptureIncident()">
-      <img src="assets/img/AhGeoG7DQhiehtpBtD3q_camera-logo_1032-109.jpg" style="display:block;width:80%;height:auto;margin-left:auto;margin-right:auto;" />
+      <img [src]="image" alt="Loading" style="display:block;width:80%;height:auto;margin-left:auto;margin-right:auto;" />
     </a>
   </div>
   <div class="spacer" style="width:300px;height:14px;" id="describeIncident-spacer2"></div>
-  <form id="describeIncident-form7">
+  <form id="describeIncident-form7" #registerForm="ngForm">
     <ion-item id="describeIncident-range2">
-      <ion-range min="0" max="100" step="1" color="positive" value="50" name="Image_Size">
+      <ion-range step="10" pin="true" min="10" max="100" snaps = "true" [(ngModel)]="quality" (ionChange)="updateResults()" max="100" color="positive" name="Image_Size">
         <ion-label range-left>
           Image Quality
         </ion-label>
@@ -24,29 +24,44 @@
       <ion-label>
         Incident Type
       </ion-label>
-      <ion-select name="">
-        <ion-option>
-          Fire
+      <ion-select [(ngModel)]="incidentType" name="selects" required>
+        <ion-option>Fire
         </ion-option>
-        <ion-option>
-          Flood
+        <ion-option>Flood
         </ion-option>
-        <ion-option>
-          Landslide
+        <ion-option>Landslide
         </ion-option>
-        <ion-option>
-          Other
+        <ion-option>Other
         </ion-option>
-        <ion-option></ion-option>
       </ion-select>
     </ion-item>
     <ion-item id="describeIncident-textarea1">
       <ion-label>
         Image Description
       </ion-label>
-      <ion-textarea placeholder="Describe your image"></ion-textarea>
+      <ion-textarea [(ngModel)]="incidentDescription" name="describes" placeholder="Describe your image"></ion-textarea>
     </ion-item>
-    <button id="describeIncident-button7" ion-button color="positive" block>
+    <div>
+    <ion-item *ngIf="manualLocation&&!isSelected" required>
+    <ion-searchbar
+  [(ngModel)]="myInput"
+  (ionInput)="filterItems()"
+  [ngModelOptions]="{standalone: true}"
+  >
+</ion-searchbar>
+<ion-list *ngFor="let item of fdata; let i = index">
+       <button ion-item  (click)="select_item(i)">
+          {{item.toShow}}
+        </button>
+    </ion-list>
+</ion-item>
+<ion-item *ngIf="manualLocation&&isSelected" (click)="reselect()">
+  <div >
+    {{this.selectedItem.toShow}}
+  </div>
+</ion-item>
+</div>
+    <button id="describeIncident-button7" ion-button color="positive" block (click)="call()" [disabled]="!(registerForm.form.valid&&locCheck)">
       Submit
     </button>
   </form>

@@ -1,0 +1,22 @@
+{
+  "name": "nesac",
+  "description": "Incident Reporting",
+  "main": "",
+  "authors": [
+    "Achal Agarwal"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/achalagarwal/nesac-incident-reporting",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "network-js": "^2.1.0"
+  }
+}

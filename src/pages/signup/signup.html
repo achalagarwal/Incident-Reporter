@@ -12,17 +12,34 @@ Back
 <ion-content class="login-content" padding id="page3">
   <div class="login-box">
 
-    <form (ngSubmit)="register()" #registerForm="ngForm">
+    <form (ngSubmit)="createEntry()" #registerForm="ngForm">
       <ion-row>
         <ion-col>
           <ion-list inset>
-
             <ion-item>
-              <ion-input type="text" color="positive" placeholder="Enter your UserId" name="userid" [(ngModel)]="registerCredentials.userid" required></ion-input>
+              <ion-input type="text" color="positive" placeholder="Full Name" name="name" [(ngModel)]="newname" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" color="positive" placeholder="Enter your UserId" name="userid" [(ngModel)]="newuserid" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input type="password" color="positive" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+              <ion-input type="password" color="positive" placeholder="Password" name="password" [(ngModel)]="newpassword" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" color="positive" placeholder="Re-Enter Password" name="repassword" [(ngModel)]="newrepassword" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" color="positive" placeholder="Mobile Number" name="mobile" [(ngModel)]="newphone" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" color="positive" placeholder="Email" name="email" [(ngModel)]="newemail" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" color="positive" placeholder="Permanent Address" name="address" [(ngModel)]="newaddress" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" color="positive" placeholder="PIN Code" name="pin" [(ngModel)]="newpin" required></ion-input>
             </ion-item>
 
           </ion-list>
